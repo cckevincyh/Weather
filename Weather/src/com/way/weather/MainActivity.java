@@ -55,7 +55,7 @@ public class MainActivity extends FragmentActivity implements
 		Application.EventHandler, OnClickListener {
 	public static final String UPDATE_WIDGET_WEATHER_ACTION = "com.way.action.update_weather";
 	public static final String WEATHER_URL = "https://api.heweather.com/x3/weather?cityid=";
-	public static final String KEY = "&key=???????????";//和风天气key
+	public static final String KEY = "&key=????????????????????????";//和风天气key
 	private static final String WEATHER_INFO_FILENAME = "_weather.json";
 	private static final String SIMPLE_WEATHER_INFO_FILENAME = "_simple_weather.json";
 	private static final String PM2D5_INFO_FILENAME = "_pm2d5.json";
@@ -356,7 +356,8 @@ public class MainActivity extends FragmentActivity implements
 			TmpBean tmp = heWeatherdataserviceBean.getDaily_forecast().get(0).getTmp();
 			temperatureTv.setText(tmp.getMin()+"°~"+tmp.getMax()+"°");//设置温度
 			cityTv.setText(heWeatherdataserviceBean.getBasic().getCity());
-			mWeatherMess.setText("天气信息:"+heWeatherdataserviceBean.getSuggestion().getComf().getTxt()+"\r\n\r\n"+
+			mWeatherMess.setText("今日降雨概率:"+heWeatherdataserviceBean.getDaily_forecast().get(0).getPop()+"%\r\n\r\n"
+			+"天气信息:"+heWeatherdataserviceBean.getSuggestion().getComf().getTxt()+"\r\n\r\n"+
 					"穿衣信息:"+heWeatherdataserviceBean.getSuggestion().getDrsg().getTxt()+"\r\n\r\n"
 					+"感冒信息:"+heWeatherdataserviceBean.getSuggestion().getFlu().getTxt()+"\r\n\r\n"
 					+"紫外线信息:"+heWeatherdataserviceBean.getSuggestion().getUv().getTxt());
@@ -371,8 +372,7 @@ public class MainActivity extends FragmentActivity implements
 			String climate = heWeatherdataserviceBean.getDaily_forecast().get(0).getCond().getTxt_d();
 					
 			climateTv.setText("白天:"+heWeatherdataserviceBean.getDaily_forecast().get(0).getCond().getTxt_d()
-					+"/夜间:"+heWeatherdataserviceBean.getDaily_forecast().get(0).getCond().getTxt_n()
-					+"  降雨概率:"+heWeatherdataserviceBean.getDaily_forecast().get(0).getPop()+"%");
+					+"/夜间:"+heWeatherdataserviceBean.getDaily_forecast().get(0).getCond().getTxt_n());
 			mSpUtil.setSimpleClimate(climate);
 		
 			if (mApplication.getWeatherIconMap().containsKey(climate)) {
