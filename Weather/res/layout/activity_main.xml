@@ -44,15 +44,18 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:padding="5.0dip" />
-   
+ 	 <ScrollView
+ 	     android:layout_width="match_parent"
+ 	     android:layout_height="wrap_content">		
           <TextView 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"  
-        android:id="@+id/weatherMessage"
-        android:textSize="18dp"
-        android:textColor="@color/actionbar_title"/>
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"  
+	        android:id="@+id/weatherMessage"
+	        android:textSize="15dp"
+	        android:textColor="@color/actionbar_title"/>
+          </ScrollView>
     </LinearLayout>
-  
+ 
 
   <!--   <LinearLayout
         android:id="@+id/adLayout"
