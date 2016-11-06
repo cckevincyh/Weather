@@ -51,7 +51,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"  
 	        android:id="@+id/weatherMessage"
-	        android:textSize="15dp"
+	        android:textSize="15sp"
 	        android:textColor="@color/actionbar_title"/>
           </ScrollView>
     </LinearLayout>
